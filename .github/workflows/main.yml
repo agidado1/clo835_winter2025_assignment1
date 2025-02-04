@@ -37,4 +37,4 @@ jobs:
         docker build -t "${ECR_REGISTRY}/${ECRAPP_REPOSITORY}:v${IMAGE_TAG}" -f Dockerfile .
                 
         docker push "${ECR_REGISTRY}/${ECRDB_REPOSITORY}:v${IMAGE_TAG}"
-        docker push "${ECR_REGISTRY}/${ECRAPP_REPOSITORY}:v${IMAGE_TAG}"
+        docker push "${ECR_REGISTRY}/${ECRAPP_REPOSITORY}:v${IMAGE_TAG}" 
