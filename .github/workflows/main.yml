@@ -34,7 +34,7 @@ jobs:
         IMAGE_TAG: ${{ github.run_number }}
       run: |
         docker build -t "${ECR_REGISTRY}/${ECRDB_REPOSITORY}:v${IMAGE_TAG}" -f Dockerfile_mysql .
-        docker push "${ECR_REGISTRY}/${ECRDB_REPOSITORY}:v${IMAGE_TAG}"
-        
         docker build -t "${ECR_REGISTRY}/${ECRAPP_REPOSITORY}:v${IMAGE_TAG}" -f Dockerfile .
+                
+        docker push "${ECR_REGISTRY}/${ECRDB_REPOSITORY}:v${IMAGE_TAG}"
         docker push "${ECR_REGISTRY}/${ECRAPP_REPOSITORY}:v${IMAGE_TAG}"
