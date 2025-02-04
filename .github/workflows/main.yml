@@ -10,7 +10,7 @@ jobs:
     name: Build Image
     runs-on: ubuntu-latest
 
-    steps:a
+    steps:
     - name: Check out code
       uses: actions/checkout@v4
 
