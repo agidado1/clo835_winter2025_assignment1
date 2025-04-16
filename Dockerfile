@@ -1,13 +1,12 @@
-FROM ubuntu:20.04
-RUN apt-get update -y
-COPY . /app
+FROM python:3.10-slim
+
 WORKDIR /app
-RUN set -xe \
-    && apt-get update -y \
-    && apt-get install -y python3-pip \
-    && apt-get install -y mysql-client 
-RUN pip install --upgrade pip
+
+COPY requirements.txt .
 RUN pip install -r requirements.txt
-EXPOSE 8080
-ENTRYPOINT [ "python3" ]
-CMD [ "app.py" ]
+
+COPY . .
+
+EXPOSE 81
+
+CMD ["python", "app.py"]
